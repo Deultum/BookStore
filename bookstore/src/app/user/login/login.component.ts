@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent  {
   loginData = {
     email: '',
     password: ''
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+ 
   onLogin(loginForm: NgForm) {
     if (loginForm.valid) {
       // Perform login logic here (e.g., send the loginData to the server for authentication)

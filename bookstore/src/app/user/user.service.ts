@@ -12,7 +12,7 @@ export class UserService {
     return true;
   }
 
-  register(username: string, email: string, password: string) {
+  register( email: string, password: string) {
     // Placeholder implementation for user registration
     // You would typically send an API request to the server to create a new user
     return true;
