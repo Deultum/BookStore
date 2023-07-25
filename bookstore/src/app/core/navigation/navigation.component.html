@@ -6,6 +6,7 @@
       <li *ngIf="!isLoggedIn"><a href="/register">Register</a></li>
       <li *ngIf="isLoggedIn"><a href="/profile">Profile</a></li>
       <li *ngIf="isLoggedIn"><a href="/catalog">Catalog</a></li>
+      <li *ngIf="isLoggedIn"><a (click)="onLogout()">Logout</a></li>
     </ul>
   </nav>
   

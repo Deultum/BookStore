@@ -1,32 +1,23 @@
 <!-- home/home.component.html -->
 
 <div class="featured-book">
-    <h2>Featured Book</h2>
-    <div class="book">
-      <img src="assets/book-cover.jpg" alt="Featured Book" />
-      <h3>Book Title</h3>
-      <p>Author Name</p>
-      <p class="price">$19.99</p>
-      <button class="btn-buy">Buy Now</button>
-    </div>
+  <h1>Welcome to our bookstore! The greatest place for bookworms</h1>
+  <h2>Best sellers</h2>
+  <div class="book" *ngIf="books.length > 0">
+    <img src="{{ books[0].img }}" alt="Featured Book" /> <!-- Assuming 'img' property contains the book cover image URL -->
+    <h3>{{ books[0].title }}</h3>
+    <p>Author: {{ books[0].author }}</p>
+    <!-- <p class="price">$19.99</p>
+    <button class="btn-buy">Buy Now</button> -->
   </div>
-  
-  <div class="book-categories">
-    <h2>Book Categories</h2>
-    <div class="categories">
-      <div class="category">
-        <img src="assets/category-1.jpg" alt="Category 1" />
-        <h3>Mystery & Thriller</h3>
-      </div>
-      <div class="category">
-        <img src="assets/category-2.jpg" alt="Category 2" />
-        <h3>Fiction</h3>
-      </div>
-      <div class="category">
-        <img src="assets/category-3.jpg" alt="Category 3" />
-        <h3>Science Fiction</h3>
-      </div>
-      <!-- Add more categories as needed -->
+</div>
+
+<div class="book-categories">
+  <h2>Book Categories</h2>
+  <!-- <div class="categories">
+    <div class="category" *ngFor="let category of booksCategories">
+      <img src="{{ category.img }}" alt="{{ category.name }}" />
+      <h3>{{ category.name }}</h3>
     </div>
-  </div>
-  
+  </div> -->
+</div>

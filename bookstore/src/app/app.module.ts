@@ -10,6 +10,7 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CatalogModule } from './catalog/catalog.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     CoreModule,
     FormsModule,
     HttpClientModule,
+    CatalogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

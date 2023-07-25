@@ -7,13 +7,19 @@ import { environment } from '../../src/app/environments/environment'; // Import 
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl: string = environment.apiUrl; // Access the API URL from the environment
+  private apiUrl: string = environment.apiUrl;
+  private booksUrl: string = environment.booksUrl // Access the API URL from the environment;
 
   constructor(private http: HttpClient) { }
 
   // HTTP GET request
   get(endpoint: string): Observable<any> {
     const url = `${this.apiUrl}/${endpoint}`;
+    return this.http.get(url);
+  }
+
+  getBooks(endpoint: string): Observable<any> {
+    const url = `${this.booksUrl}/${endpoint}`;
     return this.http.get(url);
   }
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { ApiService } from '../../api.service'; // Import the ApiService
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -15,7 +15,7 @@ export class RegisterComponent  {
     repeatPassword: ''
   };
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   // ngOnInit() { }
 
@@ -33,7 +33,7 @@ export class RegisterComponent  {
       this.apiService.post('users/register', this.registerData).subscribe(
         (response) => {
           console.log('Registration success:', response);
-        
+          this.router.navigate(['/login']);
         },
         (error) => {
           console.error('Registration failed:', error);

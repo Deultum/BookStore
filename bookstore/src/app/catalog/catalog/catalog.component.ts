@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import { ApiService } from '../api.service';
-import { Book } from '../types/book';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../api.service';
+import { Book } from 'src/app/types/book';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-catalog',
+  templateUrl: './catalog.component.html',
+  styleUrls: ['./catalog.component.css']
 })
-export class HomeComponent {
+export class CatalogComponent implements OnInit {
   loading = true;
   books: Book[] = [];
 

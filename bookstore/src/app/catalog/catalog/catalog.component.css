@@ -1,0 +1,39 @@
+/* catalog/catalog.component.css */
+
+.catalog-container {
+    max-width: 800px; /* Increase the max-width to allow three cards in a row */
+    margin: 0 auto;
+    padding: 20px;
+    display: flex; /* Use flexbox to arrange the book cards in a row */
+    flex-wrap: wrap; /* Allow cards to wrap to the next row */
+    justify-content: space-between; /* Add space between cards */
+  }
+  
+  .book {
+    width: calc(33.33% - 10px); /* Set the width of each card to occupy 33.33% of the container width */
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Adjust the margin between cards */
+    display: flex; /* Align the content in each card horizontally */
+    flex-direction: column; /* Place the content in a column layout */
+    align-items: center; /* Center content horizontally within each card */
+  }
+  
+  h3 {
+    font-size: 20px; /* Decrease the font size for book titles */
+    margin-bottom: 10px;
+  }
+  
+  img {
+    max-width: 100%; /* Ensure the image doesn't exceed the card's width */
+    max-height: 200px; /* Set a maximum height for the image */
+    margin-bottom: 10px; /* Add some space between the image and other content */
+  }
+  
+  p {
+    font-size: 14px; /* Decrease the font size for author text */
+    margin-bottom: 0; /* Remove the default margin for paragraphs */
+  }
+  
