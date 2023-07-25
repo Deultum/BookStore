@@ -1,0 +1,67 @@
+/* home/home.component.css */
+
+.featured-book {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .book {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .book img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .book h3 {
+    margin-top: 10px;
+  }
+  
+  .book p {
+    color: #666;
+  }
+  
+  .price {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  
+  .btn-buy {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .book-categories {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .category {
+    max-width: 200px;
+    margin: 10px;
+  }
+  
+  .category img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .category h3 {
+    margin-top: 10px;
+  }
+  

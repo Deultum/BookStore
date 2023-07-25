@@ -20,7 +20,6 @@ export class RegisterComponent implements OnInit {
 
   onRegister(registerForm: NgForm) {
     if (registerForm.valid) {
-      // Perform registration logic here (e.g., send the registerData to the server for user registration)
       console.log(this.registerData);
     }
   }
