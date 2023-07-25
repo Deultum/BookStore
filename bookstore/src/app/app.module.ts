@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CatalogModule } from './catalog/catalog.module';
+import { AuthService } from './auth.service';
+import { BooksModule } from './books/books.module';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,10 @@ import { CatalogModule } from './catalog/catalog.module';
     CoreModule,
     FormsModule,
     HttpClientModule,
-    CatalogModule
+    CatalogModule,
+    BooksModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

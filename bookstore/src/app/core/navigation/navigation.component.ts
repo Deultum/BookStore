@@ -20,5 +20,6 @@ export class NavigationComponent implements OnInit {
   onLogout() {
     // Call the logout() method of the AuthService to log out the user
     this.authService.logout();
+    
   }
 }

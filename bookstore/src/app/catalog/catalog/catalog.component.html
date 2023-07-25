@@ -4,14 +4,14 @@
       <p>Loading...</p>
     </div> -->
   
-    <div class="book" *ngFor="let book of books">
-      <h3>{{ book.title }}</h3>
-  
-      <!-- Display the book's image -->
-      <img *ngIf="book.img" [src]="book.img" alt="Book Cover" />
-  
-      <p>Author: {{ book.author }}</p>
-    </div>
+    
   </div>
-  
+  <div class="book" *ngFor="let book of books">
+    <h3>{{ book.title }}</h3>
+
+    <!-- Display the book's image -->
+    <img *ngIf="book.img" [src]="book.img" alt="Book Cover" />
+
+    <p>Author: {{ book.author }}</p>
+  </div>
   

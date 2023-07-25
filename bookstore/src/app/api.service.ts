@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../src/app/environments/environment'; // Import the environment object
+import { Book } from './types/book';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  // HTTP GET request
+  
   get(endpoint: string): Observable<any> {
     const url = `${this.apiUrl}/${endpoint}`;
     return this.http.get(url);
@@ -22,6 +23,13 @@ export class ApiService {
     const url = `${this.booksUrl}/${endpoint}`;
     return this.http.get(url);
   }
+  postBook(book: Book): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    // Make the POST request to create a new book
+    return this.http.post<Book>(`${this.booksUrl}/books.json`, book, { headers });
+  }
+
 
   // HTTP POST request
   post(endpoint: string, data: any): Observable<any> {
