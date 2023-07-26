@@ -15,10 +15,18 @@ export class HomeComponent {
 
   ngOnInit(): void {
     this.apiService.getBooks('/books.json').subscribe(
-      (books: Book[]) => { // Corrected the parameter to receive an array of books
-        this.books = books;
+      (booksData: any) => {
+        // Check if the data returned is an object
+        if (typeof booksData === 'object') {
+          // Convert the object values to an array
+          this.books = Object.values(booksData);
+        } else {
+          // If it's already an array, you can assign it directly
+          this.books = booksData;
+        }
+
         this.loading = false;
-        console.log({ books });
+        console.log({ books: this.books });
       },
       (error) => {
         console.error('Error fetching books:', error);

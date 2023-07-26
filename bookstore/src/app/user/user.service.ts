@@ -1,18 +1,27 @@
 import { Injectable } from '@angular/core';
 import { User } from '../types/user';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, tap } from 'rxjs';
+import { BehaviorSubject, Subscription, tap } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private user$$ = new BehaviorSubject<User | undefined>(undefined);
   public user$ = this.user$$.asObservable();
-  constructor(private http: HttpClient) { }
+  
+  constructor(private http: HttpClient) {
+    this.subscription = this.user$.subscribe((user)=>{
+      this.user = user;
+    })
+   }
+
   user: User | undefined;
+
   get isLogged(): boolean {
     return !!this.user;
   }
+  subscription: Subscription
+
   login(username: string, password: string) {
     // Placeholder implementation for login
     // You would typically send an API request to the server for authentication

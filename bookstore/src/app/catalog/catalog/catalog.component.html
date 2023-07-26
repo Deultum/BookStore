@@ -1,11 +1,12 @@
 <div class="catalog-container">
-    <h1>Book Catalog</h1>
-    <!-- <div *ngIf="loading; else bookList">
-      <p>Loading...</p>
-    </div> -->
-  
-    
-  </div>
+  <h1>Book Catalog</h1>
+  <!-- <div *ngIf="loading; else bookList">
+    <p>Loading...</p>
+  </div> -->
+</div>
+
+<!-- Wrap the book divs in a container for the grid layout -->
+<div class="book-grid-container">
   <div class="book" *ngFor="let book of books">
     <h3>{{ book.title }}</h3>
 
@@ -14,4 +15,4 @@
 
     <p>Author: {{ book.author }}</p>
   </div>
-  
+</div>

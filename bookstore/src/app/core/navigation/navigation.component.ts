@@ -7,14 +7,21 @@ import { AuthService } from 'src/app/auth.service';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-  isLoggedIn = false; // Set this to true when the user is logged in, otherwise false
+  
+   // Set this to true when the user is logged in, otherwise false
 
   constructor(private authService: AuthService) { }
 
+  isLoggedIn = false;
   ngOnInit() {
     // Subscribe to the login status changes
-    this.authService.isLoggedIn.subscribe((loggedIn) => {
+    
+    this.authService.isLoggedIn.subscribe((loggedIn: boolean) => {
+      
       this.isLoggedIn = loggedIn;
+      console.log(loggedIn);
+     
+      
     });
   }
   onLogout() {
