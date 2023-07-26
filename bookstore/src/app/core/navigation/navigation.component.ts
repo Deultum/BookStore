@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -10,7 +11,7 @@ export class NavigationComponent implements OnInit {
   
    // Set this to true when the user is logged in, otherwise false
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   isLoggedIn = false;
   ngOnInit() {
@@ -27,6 +28,6 @@ export class NavigationComponent implements OnInit {
   onLogout() {
     // Call the logout() method of the AuthService to log out the user
     this.authService.logout();
-    
+    this.router.navigate(['/']);
   }
 }

@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+// login.component.ts
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
+import { User } from 'src/app/types/user'; // Import the User type
 
 @Component({
   selector: 'app-login',
@@ -19,15 +21,19 @@ export class LoginComponent {
 
   onLogin(loginForm: NgForm) {
     if (loginForm.valid) {
-      // Send the registerData to the API endpoint
       this.apiService.post('users/login', this.loginData).subscribe(
         (response: any) => {
           console.log('Login success:', response);
 
-          // Call the login method of AuthService to update the isLoggedIn state
+          // Assuming the API returns the user data in the response
+          const userData: User = response.userData;
+
+        // Set the user data in the AuthService
+        this.authService.setUserData(userData);
+
+          // Call the login() method to set isLoggedIn to true
           this.authService.login();
 
-          // Redirect to the homepage
           this.router.navigate(['/']);
         },
         (error: any) => {

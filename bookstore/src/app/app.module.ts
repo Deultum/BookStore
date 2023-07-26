@@ -21,6 +21,7 @@ import { BooksModule } from './books/books.module';
     RegisterComponent,
     ProfileComponent,
     HomeComponent,
+   
     
   ],
   imports: [

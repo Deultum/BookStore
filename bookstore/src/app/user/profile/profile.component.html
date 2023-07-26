@@ -1,1 +1,16 @@
-<p>profile works!</p>
+<div class="profile-container">
+    <h1>Profile</h1>
+    <div *ngIf="user">
+      <!-- Add other user details here as needed -->
+  
+      <h2>My Books</h2>
+      <div class="book-grid-container">
+        <div class="book" *ngFor="let book of userBooks">
+          <h3>{{ book?.title }}</h3>
+          <img *ngIf="book?.img" [src]="book?.img" alt="Book Cover" />
+          <p>Author: {{ book?.author }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

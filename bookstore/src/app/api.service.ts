@@ -29,7 +29,10 @@ export class ApiService {
     // Make the POST request to create a new book
     return this.http.post<Book>(`${this.booksUrl}/books.json`, book, { headers });
   }
-
+  getBookById(bookId: string): Observable<Book> {
+    const url = `${this.booksUrl}/books/${bookId}.json`;
+    return this.http.get<Book>(url);
+  }
 
   // HTTP POST request
   post(endpoint: string, data: any): Observable<any> {
