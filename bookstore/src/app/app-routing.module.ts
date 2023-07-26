@@ -6,6 +6,7 @@ import { RegisterComponent } from './user/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { CatalogComponent } from './catalog/catalog/catalog.component';
 import { CreateBookComponent } from './books/create-book/create-book.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'catalog', component: CatalogComponent },
   { path: 'create', component: CreateBookComponent },
-
+  { path: '**', component: PageNotFoundComponent },
 
 
 ];
