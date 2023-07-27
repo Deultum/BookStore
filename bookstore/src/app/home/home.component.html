@@ -1,15 +1,13 @@
-<!-- home/home.component.html -->
-
 <div class="featured-book">
   <h1>Welcome to our bookstore! The greatest place for bookworms</h1>
   <h2>Best sellers</h2>
   <div class="book" *ngIf="books.length > 0">
-    <img src="{{ books[0].img }}" alt="Featured Book" /> <!-- Assuming 'img' property contains the book cover image URL -->
-    <h3>{{ books[0].title }}</h3>
-    <p>Author: {{ books[0].author }}</p>
-    <!-- <p class="price">$19.99</p>
-    <button class="btn-buy">Buy Now</button> -->
+    <img src="{{ books[0].img }}" alt="Featured Book" />
+    <div class="book-details">
+      <h3>{{ books[0].title }}</h3>
+      <p>Author: {{ books[0].author }}</p>
+      <!-- <p class="price">$19.99</p>
+      <button class="btn-buy">Buy Now</button> -->
+    </div>
   </div>
 </div>
-
-
