@@ -12,6 +12,7 @@ import { User } from 'src/app/types/user'; // Import the User type
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  
   loginData = {
     email: '',
     password: '',
@@ -24,12 +25,19 @@ export class LoginComponent {
       this.apiService.post('users/login', this.loginData).subscribe(
         (response: any) => {
           console.log('Login success:', response);
-
+           localStorage.setItem('userId', response._id);
+          // const userId = localStorage.getItem('userId')
+          // console.log(userId);
+          
+          
           // Assuming the API returns the user data in the response
           const userData: User = response.userData;
 
-        // Set the user data in the AuthService
-        this.authService.setUserData(userData);
+          
+          
+
+          // Set the user data in the AuthService
+          this.authService.setUserData(userData);
 
           // Call the login() method to set isLoggedIn to true
           this.authService.login();

@@ -10,10 +10,15 @@ import { Book } from './types/book';
 export class ApiService {
   private apiUrl: string = environment.apiUrl;
   private booksUrl: string = environment.booksUrl // Access the API URL from the environment;
-
+  private userId: string | null = localStorage.getItem('userId');
+  
   constructor(private http: HttpClient) { }
 
-  
+  getBooksByOwner(userId: string): Observable<any> {
+    const url = `${this.booksUrl}/books.json?owner=${userId}`;
+    return this.http.get(url);
+  }
+
   get(endpoint: string): Observable<any> {
     const url = `${this.apiUrl}/${endpoint}`;
     return this.http.get(url);

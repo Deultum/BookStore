@@ -1,14 +1,44 @@
 /* profile.component.css */
 .profile-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .profile-container h1 {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
+  /* Add any styles for the profile container here */
+}
+
+h1, h2, h3 {
+  /* Add any styles for headings here */
+}
+
+.book-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.book {
+  width: calc(33.33% - 10px);
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.book h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.book img {
+  max-width: 100%;
+  max-height: 200px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  padding: 5px;
+}
+
+.book p {
+  font-size: 14px;
+  margin-bottom: 0;
+}

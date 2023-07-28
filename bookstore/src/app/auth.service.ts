@@ -6,15 +6,21 @@ import { User } from "./types/user";
   providedIn: 'root'
 })
 export class AuthService {
-  private loggedIn = new BehaviorSubject<boolean>(false);
-  private user?: User;
+  public loggedIn = new BehaviorSubject<boolean>(false);
+  public user?: User;
+  public userId: string | undefined;
   constructor() {
     // Retrieve the isLoggedIn state from local storage on service initialization
     const isLoggedIn = localStorage.getItem('isLoggedIn');
+
     if (isLoggedIn !== null) {
       this.loggedIn.next(JSON.parse(isLoggedIn));
+
     }
+
   }
+
+
 
   get isLoggedIn() {
     return this.loggedIn.asObservable();
@@ -24,6 +30,10 @@ export class AuthService {
     this.loggedIn.next(true);
     // Save the isLoggedIn state to local storage
     localStorage.setItem('isLoggedIn', JSON.stringify(true));
+
+
+
+
   }
 
   logout() {
@@ -37,7 +47,11 @@ export class AuthService {
 
   // This function sets the user data after a successful login
   setUserData(userData: User) {
-    
+
     this.user = userData;
+    localStorage.setItem('userData', JSON.stringify(userData));
+  }
+  getUserId() {
+    return this.userId; // Removed 'private' to make it accessible
   }
 }

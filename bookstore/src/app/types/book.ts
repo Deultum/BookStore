@@ -1,5 +1,5 @@
 export interface Book {
-    userId?: string,
+    owner: string,
     title: string;
     author: string;
     img: string,

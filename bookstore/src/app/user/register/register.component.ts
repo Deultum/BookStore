@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent  {
+
+  errorMessage: string = '';
   registerData = {
     
     email: '',
@@ -15,7 +17,9 @@ export class RegisterComponent  {
     repeatPassword: ''
   };
 
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private apiService: ApiService, private router: Router) {
+    
+   }
 
   // ngOnInit() { }
 
@@ -33,13 +37,17 @@ export class RegisterComponent  {
       this.apiService.post('users/register', this.registerData).subscribe(
         (response) => {
           console.log('Registration success:', response);
+         
+          
           this.router.navigate(['/login']);
+         
         },
         (error) => {
           console.error('Registration failed:', error);
-          
+          this.errorMessage = `${error.error.message}`
         }
       );
     }
+    
   }
 }

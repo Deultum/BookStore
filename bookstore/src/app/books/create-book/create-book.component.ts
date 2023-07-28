@@ -16,12 +16,13 @@ export class CreateBookComponent {
     author: '',
     img: '',
     category: '',
-    
+    owner: '',
   };
 
   constructor(private apiService: ApiService, private router: Router) { }
 
   createBook(bookForm: NgForm) {
+    this.book.owner = localStorage.getItem('userId') || "";
     // Call the API service's postBook() method to make the POST request
     if (bookForm.valid) {
       this.apiService.postBook(this.book).subscribe(

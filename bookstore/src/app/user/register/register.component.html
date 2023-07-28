@@ -43,6 +43,10 @@
       </div>
   
       <button type="submit" [disabled]="registerForm.invalid">Register</button>
+
+      <div class="error-container" *ngIf="errorMessage" >
+        {{errorMessage}}
+       </div>
     </form>
   </div>
   
