@@ -38,7 +38,10 @@ export class ApiService {
     const url = `${this.booksUrl}/books/${bookId}.json`;
     return this.http.get<Book>(url);
   }
-
+  deleteBookById(bookId: string): Observable<any> {
+    const url = `${this.booksUrl}/books/${bookId}.json`;
+    return this.http.delete(url);
+  }
   // HTTP POST request
   post(endpoint: string, data: any): Observable<any> {
     const url = `${this.apiUrl}/${endpoint}`;

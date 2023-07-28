@@ -35,4 +35,17 @@ export class ProfileComponent implements OnInit {
   getLoggedInUserId(): string | null {
     return localStorage.getItem('userId');
   }
+  deleteBook(bookId: string): void {
+    if (confirm('Are you sure you want to delete this book?')) {
+      this.apiService.delete(`books/${bookId}.json`).subscribe(
+        () => {
+          // Remove the deleted book from the userBooks array
+          this.userBooks = this.userBooks.filter((book) => book.owner !== bookId);
+        },
+        (error) => {
+          console.error('Error deleting book:', error);
+        }
+      );
+    }
+  }
 }

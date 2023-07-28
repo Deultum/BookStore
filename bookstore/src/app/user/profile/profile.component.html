@@ -9,8 +9,11 @@
         <img *ngIf="book?.img" [src]="book?.img" alt="Book Cover" />
         <p>Author: {{ book?.author }}</p>
         <!-- Add other book details here as needed -->
+
+        <!-- Add Delete and Modify buttons -->
+        <button (click)="deleteBook(book.owner)">Delete</button>
+        <button>Modify</button>
       </ng-container>
     </div>
   </div>
 </div>
-
