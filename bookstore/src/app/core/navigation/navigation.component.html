@@ -7,7 +7,7 @@
 
     <li *ngIf="!isLoggedIn"><a href="/login">Login</a></li>
     <li *ngIf="!isLoggedIn"><a href="/register">Register</a></li>
-    <li *ngIf="isLoggedIn"><a href="/profile">Profile</a></li>
+    <li *ngIf="isLoggedIn"><a href="/profile">My library</a></li>
     <li *ngIf="isLoggedIn"><a (click)="onLogout()">Logout</a></li>
   </ul>
 </nav>
