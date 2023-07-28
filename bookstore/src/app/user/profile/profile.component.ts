@@ -17,6 +17,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     const userData = this.authService.getUserData();
+    console.log(userData);
 
     if (userData) {
       this.user = userData;
@@ -27,13 +28,13 @@ export class ProfileComponent implements OnInit {
   }
 
   getUserBooks(): void {
-    
+
     this.apiService.get(`books.json?authorId=${this.user?.id}`).subscribe(
       (booksData: any) => {
         if (typeof booksData === 'object') {
           this.userBooks = Object.values(booksData);
           console.log(this.userBooks);
-          
+
         } else {
           this.userBooks = booksData;
         }

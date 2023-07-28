@@ -37,6 +37,7 @@ export class AuthService {
 
   // This function sets the user data after a successful login
   setUserData(userData: User) {
+    
     this.user = userData;
   }
 }

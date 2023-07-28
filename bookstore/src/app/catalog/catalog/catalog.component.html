@@ -7,8 +7,8 @@
 
 <!-- Add buttons for each book category (visible only to logged-in users) -->
 <div *ngIf="isLoggedIn">
-  <div class="category-buttons">
-    <button *ngFor="let category of categories" (click)="filterByCategory(category)">
+  <div  class="category-buttons">
+    <button  *ngFor="let category of categories"  (click)="filterByCategory(category)">
       {{ category }}
     </button>
   </div>
@@ -16,7 +16,7 @@
 
 <!-- Wrap the book divs in a container for the grid layout -->
 <div class="book-grid-container">
-  <div class="book" *ngFor="let book of filteredBooks">
+  <div class="book"  *ngFor="let book of filteredBooks">
     <h3>{{ book.title }}</h3>
 
     <!-- Display the book's image -->
