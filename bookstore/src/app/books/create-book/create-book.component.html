@@ -31,7 +31,7 @@
     <div class="form-group">
       <label for="category">Category:</label>
       <!-- Use (ngModelChange) to update book.category -->
-      <input type="text" id="category" name="category" [ngModel]="book.category" required />
+      <input type="text" id="category" name="category" [(ngModel)]="book.category" required />
       <!-- Show the error message if the category field is invalid and has been touched -->
       <div *ngIf="bookForm.controls['category']?.invalid && bookForm.controls['category'].touched" class="error-message">
         Category is required.
