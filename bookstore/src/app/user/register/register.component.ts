@@ -21,7 +21,7 @@ export class RegisterComponent  {
     
    }
 
-  // ngOnInit() { }
+  
 
   // Custom validator function to check if passwords match
   passwordMatchValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
@@ -30,24 +30,25 @@ export class RegisterComponent  {
 
     return password === repeatPassword ? null : { passwordMismatch: true };
   };
-
+  
   onRegister(registerForm: NgForm) {
-    if (registerForm.valid) {
+    // Check if the form is valid and the passwords match
+    if (registerForm.valid && !this.passwordMatchValidator(registerForm.control)) {
       // Send the registerData to the API endpoint
       this.apiService.post('users/register', this.registerData).subscribe(
         (response) => {
           console.log('Registration success:', response);
-         
-          
           this.router.navigate(['/login']);
-         
         },
         (error) => {
-          console.error('Registration failed:', error);
-          this.errorMessage = `${error.error.message}`
+          //console.error('Registration failed:', error);
+          this.errorMessage = `${error.error.message}`;
         }
       );
+    } else {
+      
+          this.errorMessage = `Passwords missmatch`;
     }
-    
   }
+  
 }
