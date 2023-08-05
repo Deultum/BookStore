@@ -28,6 +28,8 @@ export class CatalogComponent implements OnInit {
       (booksData: any) => {
         // Check if the data returned is an object
         if (typeof booksData === 'object') {
+          console.log(Object.keys(booksData));
+          
           // Convert the object values to an array
           this.books = Object.values(booksData);
         } else {

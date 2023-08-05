@@ -44,7 +44,9 @@
       </div>
   
       <button type="submit" [disabled]="registerForm.invalid">Register</button>
-
+<div>
+  <ul>You already have an account ? <a href="/login">Sign in</a></ul>
+</div>
       <div class="error-container" *ngIf="errorMessage" >
         {{errorMessage}}
        </div>

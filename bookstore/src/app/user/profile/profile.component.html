@@ -1,19 +1,27 @@
 <div class="profile-container">
- 
   <h1>My Books</h1>
   <div class="book-grid-container">
-    <div class="book" *ngFor="let book of userBooks">
-      <!-- Use *ngIf to show books that match the criteria -->
-      <ng-container *ngIf="book.owner === getLoggedInUserId()">
-        <h3>{{ book?.title }}</h3>
-        <img *ngIf="book?.img" [src]="book?.img" alt="Book Cover" />
-        <p>Author: {{ book?.author }}</p>
-        <!-- Add other book details here as needed -->
-
-        <!-- Add Delete and Modify buttons -->
-        <button (click)="deleteBook(book.owner)">Delete</button>
-        <button>Modify</button>
-      </ng-container>
-    </div>
+    <!-- Show user books if available -->
+    <ng-container *ngIf="userBooks.length > 0; else showNoBooks">
+      <div *ngFor="let book of userBooks" class="book">
+        <!-- Use *ngIf to show books that match the criteria -->
+        <ng-container *ngIf="book.owner === getLoggedInUserId()">
+          <h3>{{ book?.title }}</h3>
+          <div class="book-info">
+            <img *ngIf="book?.img" [src]="book?.img" alt="Book Cover" />
+            <p>Author: {{ book?.author }}</p>
+          </div>
+          <!-- Add Delete button below author -->
+          <button (click)="deleteBook(book.bookId)">Delete</button>
+        </ng-container>
+        <ng-container *ngIf="book.owner !== getLoggedInUserId()">
+          <p>Error: You do not have permission to view this book.</p>
+        </ng-container>
+      </div>
+    </ng-container>
   </div>
 </div>
+
+<ng-template #showNoBooks>
+  <h2>You have not added any books. Add one <a href="/create">here</a></h2>
+</ng-template>

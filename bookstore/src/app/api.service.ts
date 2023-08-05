@@ -56,7 +56,7 @@ export class ApiService {
 
   // HTTP DELETE request
   delete(endpoint: string): Observable<any> {
-    const url = `${this.apiUrl}/${endpoint}`;
+    const url = `${this.booksUrl}/${endpoint}`;
     return this.http.delete(url);
   }
 }

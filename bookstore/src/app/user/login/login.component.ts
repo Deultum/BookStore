@@ -12,7 +12,7 @@ import { User } from 'src/app/types/user'; // Import the User type
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  
+  errorMessage: string = '';
   loginData = {
     email: '',
     password: '',
@@ -46,6 +46,7 @@ export class LoginComponent {
         },
         (error: any) => {
           console.error('Login failed:', error);
+          this.errorMessage = `${error.error.message}`;
         }
       );
     }

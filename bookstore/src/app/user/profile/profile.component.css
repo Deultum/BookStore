@@ -1,44 +1,57 @@
-/* profile.component.css */
-.profile-container {
-  /* Add any styles for the profile container here */
-}
-
-h1, h2, h3 {
-  /* Add any styles for headings here */
-}
-
+/* CSS for the book grid container */
 .book-grid-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
+/* CSS for each book card */
 .book {
   width: calc(33.33% - 10px);
   margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid orange; /* Add an orange border */
+  border-radius: 10px; /* Round edges */
+  padding: 10px; /* Add some padding */
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f0f0f0;
 }
 
-.book h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
+/* CSS for the book image */
 .book img {
   max-width: 100%;
-  max-height: 200px;
+  max-height: 250px; /* Increase the maximum height to make the image a little bigger */
   margin-bottom: 10px;
-  border: 2px solid #ccc;
-  padding: 5px;
 }
 
-.book p {
+/* CSS for the book title */
+h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center; /* Center the title */
+}
+
+/* CSS for the book author */
+.book-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
   font-size: 14px;
   margin-bottom: 0;
+  text-align: center; /* Center the author */
+}
+
+/* CSS for the delete button */
+button {
+  background-color: red; /* Change the background color to red */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px; /* Round edges */
+  cursor: pointer;
+  margin-top: 10px;
 }
