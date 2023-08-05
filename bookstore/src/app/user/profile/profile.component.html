@@ -13,6 +13,7 @@
           </div>
           <!-- Add Delete button below author -->
           <button (click)="deleteBook(book.bookId)">Delete</button>
+          <button (click)="editBook(book.bookId)">Edit</button>
         </ng-container>
         <ng-container *ngIf="book.owner !== getLoggedInUserId()">
           <p>Error: You do not have permission to view this book.</p>

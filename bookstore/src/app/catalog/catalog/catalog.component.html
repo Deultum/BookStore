@@ -24,5 +24,6 @@
     <img *ngIf="book.img" [src]="book.img" alt="Book Cover" />
 
     <p>Author: {{ book.author }}</p>
+    <p *ngIf="isLoggedIn">Genre: {{ book.category }}</p>
   </div>
 </div>

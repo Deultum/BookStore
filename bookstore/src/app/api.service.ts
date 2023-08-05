@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../src/app/environments/environment'; // Import the environment object
+import { environment } from '../../src/app/environments/environment'; 
 import { Book } from './types/book';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { Book } from './types/book';
 })
 export class ApiService {
   private apiUrl: string = environment.apiUrl;
-  private booksUrl: string = environment.booksUrl // Access the API URL from the environment;
+  private booksUrl: string = environment.booksUrl 
   private userId: string | null = localStorage.getItem('userId');
   
   constructor(private http: HttpClient) { }
@@ -37,6 +37,10 @@ export class ApiService {
   getBookById(bookId: string): Observable<Book> {
     const url = `${this.booksUrl}/books/${bookId}.json`;
     return this.http.get<Book>(url);
+  }
+  updateBook(bookId: string, bookData: Book): Observable<any> {
+    const url = `${this.booksUrl}/books/${bookId}.json`;
+    return this.http.put(url, bookData);
   }
   deleteBookById(bookId: string): Observable<any> {
     const url = `${this.booksUrl}/books/${bookId}.json`;

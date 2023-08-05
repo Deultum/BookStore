@@ -1,0 +1,57 @@
+/* books/edit-book/edit-book.component.css */
+.create-book-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Add styling for the form */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f6f6f6;
+  }
+  
+  /* Style the submit button */
+  button[type="submit"] {
+    width: 50%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff9010;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Add a container for the form and apply border and rounded corners */
+  .form-container {
+    max-width: 500px; /* Adjust the width as needed */
+    margin: 0 auto;
+    border: 2px solid orange;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  

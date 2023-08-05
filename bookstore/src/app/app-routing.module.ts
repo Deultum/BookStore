@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { CatalogComponent } from './catalog/catalog/catalog.component';
 import { CreateBookComponent } from './books/create-book/create-book.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+import { EditBookComponent } from './books/edit-book/edit-book.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'catalog', component: CatalogComponent },
   { path: 'create', component: CreateBookComponent },
+  { path: 'edit/:id', component: EditBookComponent },
+
   { path: '**', component: PageNotFoundComponent },
 
 

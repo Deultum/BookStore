@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { ApiService } from 'src/app/api.service';
 import { Book } from 'src/app/types/book';
 
@@ -10,7 +12,7 @@ import { Book } from 'src/app/types/book';
 export class ProfileComponent implements OnInit {
   userBooks: Book[] = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.getUserBooks();
@@ -43,7 +45,13 @@ export class ProfileComponent implements OnInit {
   getLoggedInUserId(): string | null {
     return localStorage.getItem('userId');
   }
-
+  editBook(bookId: string | undefined): void {
+    if (!bookId) {
+      console.error('Book ID is undefined.');
+      return;
+    }
+    this.router.navigate(['/edit', bookId]);
+  }
   deleteBook(bookId: string | undefined ): void {
     if (!bookId) {
       console.error('Book ID is undefined.');
