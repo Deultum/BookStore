@@ -8,6 +8,7 @@
 <!-- Add buttons for each book category (visible only to logged-in users) -->
 <div *ngIf="isLoggedIn" >
   <div  class="category-buttons">
+    <h3>Filter by genre</h3>
     <button  *ngFor="let category of categories"  (click)="filterByCategory(category)">
       {{ category }}
     </button>

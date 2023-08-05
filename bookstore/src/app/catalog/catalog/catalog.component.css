@@ -1,27 +1,23 @@
 /* catalog/catalog.component.css */
 
 .catalog-container {
-  /* Existing styles for the container... */
-  display: flex; /* Use flexbox to arrange the book cards in a row */
-  /* flex-wrap: wrap; Allow cards to wrap to the next row */
-  /* justify-content: space-between; Add space between cards */
-  justify-content: space-evenly;
-  flex-wrap: nowrap;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the book cards horizontally */
 }
 
 .book {
   /* Existing styles for the book... */
-  /* width: calc(33.33% - 10px); Set the width of each card to occupy 33.33% of the container width */
-  max-width: 400;
+  max-width: 400px; /* Adjust the maximum width of each card as needed */
   width: 100%;
   background-color: #f0f0f0;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px; /* Adjust the margin between cards */
+  margin-bottom: 10px; /* Adjust the margin between cards to reduce spacing */
   display: flex; /* Align the content in each card horizontally */
   flex-direction: column; /* Place the content in a column layout */
-  align-items: center; /*Center content horizontally within each card*/
+  align-items: center; /* Center content horizontally within each card */
 }
 
 h3 {
@@ -39,11 +35,11 @@ p {
   margin-bottom: 0; /* Remove the default margin for paragraphs */
 }
 /* Add this to your component's CSS file or the global stylesheet */
-.book-grid-container {
+/* .book-grid-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
+} */
 
 .book {
   width: calc(33.33% - 10px); /* Adjust the width as needed */
@@ -76,6 +72,12 @@ p {
 .book {
   width: calc(33.33% - 10px); /* Adjust the width as needed */
   margin-bottom: 20px; /* Add some space between the books */
+  border: 2px solid orange;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* Add this to your component's CSS file or the global stylesheet */
 .book-grid-container {
@@ -93,4 +95,16 @@ p {
 .book img {
   border: 2px solid #ccc; /* Set the border width and color */
   padding: 5px; /* Add some padding inside the border */
+}
+button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 10px; /* Add margin to the right of the button */
+  margin-bottom: 10px; 
 }
