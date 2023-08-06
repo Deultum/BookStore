@@ -5,4 +5,5 @@ export interface Book {
     author: string;
     img: string,
     category: string,
+    content?: string,
 }

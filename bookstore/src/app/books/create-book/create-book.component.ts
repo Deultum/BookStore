@@ -11,6 +11,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./create-book.component.css']
 })
 export class CreateBookComponent {
+  errorMessage: string = '';
   book: Book = {
     title: '',
     author: '',
@@ -27,13 +28,13 @@ export class CreateBookComponent {
     if (bookForm.valid) {
       this.apiService.postBook(this.book).subscribe(
         (response) => {
-          console.log('Book created successfully:', response);
+         // console.log('Book created successfully:', response);
           this.router.navigate(['/catalog']);
   
         },
         (error) => {
-          console.error('Error creating book:', error);
-          // Handle the error response here, such as showing an error message
+          //console.error('Error creating book:', error);
+          this.errorMessage = `${error.error.message}`;
         }
       );
       

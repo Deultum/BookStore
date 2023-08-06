@@ -37,7 +37,7 @@ export class RegisterComponent  {
       // Send the registerData to the API endpoint
       this.apiService.post('users/register', this.registerData).subscribe(
         (response) => {
-          console.log('Registration success:', response);
+       //   console.log('Registration success:', response);
           this.router.navigate(['/login']);
         },
         (error) => {

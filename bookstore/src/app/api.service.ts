@@ -40,7 +40,7 @@ export class ApiService {
   }
   updateBook(bookId: string, bookData: Book): Observable<any> {
     const url = `${this.booksUrl}/books/${bookId}.json`;
-    return this.http.put(url, bookData);
+    return this.http.patch(url, bookData);
   }
   deleteBookById(bookId: string): Observable<any> {
     const url = `${this.booksUrl}/books/${bookId}.json`;

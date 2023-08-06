@@ -21,7 +21,6 @@ export class CatalogComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isLoggedIn.subscribe((loggedIn: boolean) => {
       this.isLoggedIn = loggedIn;
-
     });
 
     this.apiService.getBooks('/books.json').subscribe(
@@ -29,9 +28,12 @@ export class CatalogComponent implements OnInit {
         // Check if the data returned is an object
         if (typeof booksData === 'object') {
           console.log(Object.keys(booksData));
-          
-          // Convert the object values to an array
-          this.books = Object.values(booksData);
+
+          // Convert the object values to an array and add bookId to each book
+          this.books = Object.keys(booksData).map(bookId => ({
+            bookId,
+            ...booksData[bookId]
+          }));
         } else {
           // If it's already an array, you can assign it directly
           this.books = booksData;
@@ -47,6 +49,13 @@ export class CatalogComponent implements OnInit {
         this.loading = false;
       }
     );
+  }
+  readBook(bookId: string | undefined): void {
+    if (!bookId) {
+      console.error('Book ID is undefined.');
+      return;
+    }
+    this.router.navigate(['/read', bookId]);
   }
 
   filterByCategory(category: string): void {

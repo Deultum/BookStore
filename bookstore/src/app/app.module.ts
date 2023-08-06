@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CatalogModule } from './catalog/catalog.module';
 import { AuthService } from './auth.service';
 import { BooksModule } from './books/books.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BooksModule } from './books/books.module';
     FormsModule,
     HttpClientModule,
     CatalogModule,
-    BooksModule
+    BooksModule,
+    RouterModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

@@ -4,6 +4,8 @@ import { CreateBookComponent } from './create-book/create-book.component';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EditBookComponent } from './edit-book/edit-book.component';
+import { ReadBookComponent } from './read-book/read-book.component';
+
 
 
 
@@ -11,6 +13,8 @@ import { EditBookComponent } from './edit-book/edit-book.component';
   declarations: [
     CreateBookComponent,
     EditBookComponent,
+    ReadBookComponent,
+    
   ],
   imports: [
     CommonModule,

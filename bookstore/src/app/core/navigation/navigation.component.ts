@@ -20,7 +20,7 @@ export class NavigationComponent implements OnInit {
     this.authService.isLoggedIn.subscribe((loggedIn: boolean) => {
       
       this.isLoggedIn = loggedIn;
-      console.log(loggedIn);
+      //console.log(loggedIn);
      
       
     });

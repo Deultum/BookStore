@@ -26,7 +26,7 @@ export class HomeComponent {
         }
 
         this.loading = false;
-        console.log({ books: this.books });
+       // console.log({ books: this.books });
       },
       (error) => {
         console.error('Error fetching books:', error);

@@ -1,24 +1,46 @@
 <h1>Edit Book</h1>
 <div *ngIf="book" class="form-container">
-  <form (ngSubmit)="onSubmit()">
+  <form (submit)="onSubmit(editForm)" #editForm="ngForm">
     <div class="form-group">
       <label>Title:</label>
       <input type="text" [(ngModel)]="book.title" name="title" required />
+      <div *ngIf="editForm.controls['title']?.invalid && editForm.controls['title'].touched" class="error-message">
+        Title is required.
+      </div>
     </div>
     <div class="form-group">
       <label>Author:</label>
       <input type="text" [(ngModel)]="book.author" name="author" required />
+      <div *ngIf="editForm.controls['title']?.invalid && editForm.controls['title'].touched" class="error-message">
+        Author is required.
+      </div>
     </div>
     <div class="form-group">
       <label>Image URL:</label>
-      <input type="text" [(ngModel)]="book.img" name="img" />
+      <input type="text" [(ngModel)]="book.img" name="img" required/>
+      <div *ngIf="editForm.controls['title']?.invalid && editForm.controls['title'].touched" class="error-message">
+        Image is required.
+      </div>
     </div>
     <div class="form-group">
       <label>Category:</label>
-      <input type="text" [(ngModel)]="book.category" name="category" />
+      <input type="text" [(ngModel)]="book.category" name="category" required />
+      <div *ngIf="editForm.controls['category']?.invalid && editForm.controls['category'].touched" class="error-message">
+        Category is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Content:</label>
+      <input type="text" [(ngModel)]="book.content" name="content" required />
+      <div *ngIf="editForm.controls['content']?.invalid && editForm.controls['content'].touched" class="error-message">
+        Content is required.
+      </div>
     </div>
     <div>
       <button type="submit">Submit</button>
     </div>
+    <div class="error-container" *ngIf="errorMessage" >
+      {{errorMessage}}
+     </div>
   </form>
 </div>
