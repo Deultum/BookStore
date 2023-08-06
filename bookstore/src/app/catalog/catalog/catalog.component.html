@@ -25,6 +25,6 @@
 
     <p>Author: {{ book.author }}</p>
     <p *ngIf="isLoggedIn">Genre: {{ book.category }}</p>
-    <button (click)="readBook(book.bookId)">Read</button>
+    <button *ngIf="isLoggedIn" (click)="readBook(book.bookId)">Read</button>
   </div>
 </div>
