@@ -27,7 +27,7 @@ export class CatalogComponent implements OnInit {
       (booksData: any) => {
         // Check if the data returned is an object
         if (typeof booksData === 'object') {
-          console.log(Object.keys(booksData));
+        //  console.log(Object.keys(booksData));
 
           // Convert the object values to an array and add bookId to each book
           this.books = Object.keys(booksData).map(bookId => ({
@@ -42,7 +42,7 @@ export class CatalogComponent implements OnInit {
 
         this.filteredBooks = this.books; // Initially, show all books
         this.loading = false;
-        console.log({ books: this.books });
+       // console.log({ books: this.books });
       },
       (error) => {
         console.error('Error fetching books:', error);
