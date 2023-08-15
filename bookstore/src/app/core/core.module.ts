@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavigationComponent } from './navigation/navigation.component';
 import {  FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { Router, RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     CommonModule,
-    
+    RouterModule,
   ],
   exports: [
     NavigationComponent,
