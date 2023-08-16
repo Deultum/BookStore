@@ -12,12 +12,12 @@ body {
 }
 
 footer {
-  background-color: #333; /* Background color */
-  color: #fff; /* Text color */
+  background-color: #333; 
+  color: #fff; 
   text-align: center;
   padding: 10px;
 }
 
 footer p {
-  margin: 0; /* Remove default margin for <p> */
+  margin: 0; 
 }

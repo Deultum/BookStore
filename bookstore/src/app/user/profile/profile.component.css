@@ -1,37 +1,37 @@
-/* CSS for the book grid container */
+
 .book-grid-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-/* CSS for each book card */
+
 .book {
   width: calc(33.33% - 10px);
   margin-bottom: 20px;
-  border: 2px solid orange; /* Add an orange border */
-  border-radius: 10px; /* Round edges */
-  padding: 10px; /* Add some padding */
+  border: 2px solid orange; 
+  border-radius: 10px; 
+  padding: 10px; 
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* CSS for the book image */
+
 .book img {
   max-width: 100%;
-  max-height: 250px; /* Increase the maximum height to make the image a little bigger */
+  max-height: 250px; 
   margin-bottom: 10px;
 }
 
-/* CSS for the book title */
+
 h3 {
   font-size: 20px;
   margin-bottom: 10px;
-  text-align: center; /* Center the title */
+  text-align: center; 
 }
 
-/* CSS for the book author */
+
 .book-info {
   display: flex;
   flex-direction: column;
@@ -41,17 +41,17 @@ h3 {
 p {
   font-size: 14px;
   margin-bottom: 0;
-  text-align: center; /* Center the author */
+  text-align: center; 
 }
 
-/* CSS for the delete button */
+
 button {
-  background-color: red; /* Change the background color to red */
+  background-color: red; 
   color: white;
   border: none;
   padding: 5px 10px;
   font-size: 14px;
-  border-radius: 5px; /* Round edges */
+  border-radius: 5px; 
   cursor: pointer;
   margin-top: 10px;
 }

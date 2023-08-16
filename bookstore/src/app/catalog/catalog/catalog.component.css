@@ -1,40 +1,40 @@
-/* catalog/catalog.component.css */
+
 
 .catalog-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center the book cards horizontally */
+  justify-content: center; 
 }
 
 .book {
-  /* Existing styles for the book... */
-  max-width: 400px; /* Adjust the maximum width of each card as needed */
+  
+  max-width: 400px; 
   width: 100%;
   background-color: #f0f0f0;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px; /* Adjust the margin between cards to reduce spacing */
-  display: flex; /* Align the content in each card horizontally */
-  flex-direction: column; /* Place the content in a column layout */
-  align-items: center; /* Center content horizontally within each card */
+  margin-bottom: px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
 }
 
 h3 {
-  font-size: 20px; /* Decrease the font size for book titles */
+  font-size: 20px; 
   margin-bottom: 10px;
 }
 
 img {
-  max-width: 100%; /* Ensure the image doesn't exceed the card's width */
-  max-height: 100% /* Set a maximum height for the image */
+  max-width: 100%; 
+  max-height: 100% 
 }
 
 p {
-  font-size: 14px; /* Decrease the font size for author text */
-  margin-bottom: 0; /* Remove the default margin for paragraphs */
+  font-size: 14px; 
+  margin-bottom: 0; 
 }
-/* Add this to your component's CSS file or the global stylesheet */
+
 /* .book-grid-container {
   display: flex;
   flex-wrap: wrap;
@@ -42,36 +42,32 @@ p {
 } */
 
 .book {
-  width: calc(33.33% - 10px); /* Adjust the width as needed */
-  margin-bottom: 20px; /* Add some space between the books */
+  width: calc(33.33% - 10px); 
+  margin-bottom: 20px; 
 }
 
 
 h3 {
-  font-size: 20px; /* Decrease the font size for book titles */
+  font-size: 20px; 
   margin-bottom: 10px;
 }
 
 img {
-  max-width: 100%; /* Ensure the image doesn't exceed the card's width */
-  max-height: 200px; /* Set a maximum height for the image */
-  margin-bottom: 10px; /* Add some space between the image and other content */
+  max-width: 100%; 
+  max-height: 200px; 
+  margin-bottom: 10px; 
 }
 
 p {
-  font-size: 14px; /* Decrease the font size for author text */
-  margin-bottom: 0; /* Remove the default margin for paragraphs */
-}
-/* Add this to your component's CSS file or the global stylesheet */
-.book-grid-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  font-size: 14px; 
+  margin-bottom: 0; 
 }
 
+
+
 .book {
-  width: calc(33.33% - 10px); /* Adjust the width as needed */
-  margin-bottom: 20px; /* Add some space between the books */
+  width: calc(33.33% - 10px); 
+  margin-bottom: 20px; 
   border: 2px solid orange;
   border-radius: 10px;
   padding: 10px;
@@ -79,7 +75,7 @@ p {
   flex-direction: column;
   align-items: center;
 }
-/* Add this to your component's CSS file or the global stylesheet */
+
 .book-grid-container {
   display: flex;
   flex-wrap: wrap;
@@ -87,14 +83,14 @@ p {
 }
 
 .book {
-  width: calc(33.33% - 10px); /* Adjust the width as needed */
-  margin-bottom: 20px; /* Add some space between the books */
+  width: calc(33.33% - 10px); 
+  margin-bottom: 20px; 
 }
 
-/* Add a border to the images */
+
 .book img {
-  border: 2px solid #ccc; /* Set the border width and color */
-  padding: 5px; /* Add some padding inside the border */
+  border: 2px solid #ccc; 
+  padding: 5px; 
 }
 button {
   background-color: red;
@@ -105,6 +101,6 @@ button {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
-  margin-right: 10px; /* Add margin to the right of the button */
+  margin-right: 10px; 
   margin-bottom: 10px; 
 }
