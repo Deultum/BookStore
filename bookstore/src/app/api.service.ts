@@ -31,7 +31,7 @@ export class ApiService {
   postBook(book: Book): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    // Make the POST request to create a new book
+    
     return this.http.post<Book>(`${this.booksUrl}/books.json`, book, { headers });
   }
   getBookById(bookId: string): Observable<Book> {
@@ -46,19 +46,19 @@ export class ApiService {
     const url = `${this.booksUrl}/books/${bookId}.json`;
     return this.http.delete(url);
   }
-  // HTTP POST request
+  
   post(endpoint: string, data: any): Observable<any> {
     const url = `${this.apiUrl}/${endpoint}`;
     return this.http.post(url, data);
   }
 
-  // HTTP PUT request
+
   put(endpoint: string, data: any): Observable<any> {
     const url = `${this.apiUrl}/${endpoint}`;
     return this.http.put(url, data);
   }
 
-  // HTTP DELETE request
+  
   delete(endpoint: string): Observable<any> {
     const url = `${this.booksUrl}/${endpoint}`;
     return this.http.delete(url);

@@ -27,16 +27,16 @@ export class EditBookComponent implements OnInit {
       this.bookId = params['id'];
       //console.log(this.bookId);
 
-      if (this.bookId) { // Ensure that bookId is not null before calling the API
+      if (this.bookId) { 
         this.apiService.getBookById(this.bookId).subscribe((book) => {
           if (book && book.owner === this.loggedInUserId) {
             this.book = book;
           } else {
-            this.router.navigate(['/404']); // Redirect to the books list page
+            this.router.navigate(['/404']); 
           }
         });
       } else {
-        this.router.navigate(['/books']); // Redirect to the books list page if bookId is null
+        this.router.navigate(['/books']); 
       }
     });
   }
@@ -45,11 +45,11 @@ export class EditBookComponent implements OnInit {
     if (editForm.valid && this.book && this.bookId) {
       this.apiService.updateBook(this.bookId, this.book).subscribe(
         () => {
-          // Book updated successfully, navigate to the books list page
+         
           this.router.navigate(['/catalog']);
         },
         (error) => {
-         // console.error('Error updating book:', error);
+         
           this.errorMessage = `${error.error.message}`;
         }
       );

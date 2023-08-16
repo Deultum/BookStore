@@ -1,4 +1,7 @@
 <div *ngIf="book" class="book-container">
+    <div *ngIf="loading">
+        <app-loader/>
+      </div>
     <h2>{{ book.title }}</h2>
     <div class="book-content" >
         {{book.content}}

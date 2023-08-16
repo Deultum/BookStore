@@ -20,13 +20,13 @@ export class NavigationComponent implements OnInit {
     this.authService.isLoggedIn.subscribe((loggedIn: boolean) => {
       
       this.isLoggedIn = loggedIn;
-      //console.log(loggedIn);
+    
      
       
     });
   }
   onLogout() {
-    // Call the logout() method of the AuthService to log out the user
+  
     this.authService.logout();
     this.router.navigate(['/']);
   }

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { ReadBookComponent } from './read-book/read-book.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -19,7 +20,7 @@ import { ReadBookComponent } from './read-book/read-book.component';
   imports: [
     CommonModule,
     FormsModule,
-    
+    SharedModule
   ],
   exports:[CreateBookComponent],
 })

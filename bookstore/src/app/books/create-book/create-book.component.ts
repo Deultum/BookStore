@@ -28,12 +28,12 @@ export class CreateBookComponent {
     if (bookForm.valid) {
       this.apiService.postBook(this.book).subscribe(
         (response) => {
-         // console.log('Book created successfully:', response);
+        
           this.router.navigate(['/catalog']);
   
         },
         (error) => {
-          //console.error('Error creating book:', error);
+         
           this.errorMessage = `${error.error.message}`;
         }
       );

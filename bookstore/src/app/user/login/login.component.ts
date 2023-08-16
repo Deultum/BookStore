@@ -24,10 +24,9 @@ export class LoginComponent {
     if (loginForm.valid) {
       this.apiService.post('users/login', this.loginData).subscribe(
         (response: any) => {
-        //  console.log('Login success:', response);
+        
            localStorage.setItem('userId', response._id);
-          // const userId = localStorage.getItem('userId')
-          // console.log(userId);
+         
           
           
           // Assuming the API returns the user data in the response

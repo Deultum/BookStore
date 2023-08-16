@@ -22,10 +22,10 @@ export class ProfileComponent implements OnInit {
     this.apiService.getBooks('/books.json').subscribe(
       (booksData: any) => {
         if (typeof booksData === 'object') {
-          // Convert the booksData object to an array of books with their keys as bookId
+         
           this.userBooks = Object.keys(booksData).map(key => ({ ...booksData[key], bookId: key }));
   
-          // Filter out books that do not belong to the logged-in user
+        
           const loggedInUserId = this.getLoggedInUserId();
           if (loggedInUserId) {
             this.userBooks = this.userBooks.filter(book => book.owner === loggedInUserId);
@@ -36,7 +36,7 @@ export class ProfileComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching user books:', error);
-        // If there's an error fetching books, set userBooks to an empty array
+       
         this.userBooks = [];
       }
     );

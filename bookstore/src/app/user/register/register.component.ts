@@ -32,16 +32,16 @@ export class RegisterComponent  {
   };
   
   onRegister(registerForm: NgForm) {
-    // Check if the form is valid and the passwords match
+    
     if (registerForm.valid && !this.passwordMatchValidator(registerForm.control)) {
-      // Send the registerData to the API endpoint
+      
       this.apiService.post('users/register', this.registerData).subscribe(
         (response) => {
-       //   console.log('Registration success:', response);
+   
           this.router.navigate(['/login']);
         },
         (error) => {
-          //console.error('Registration failed:', error);
+        
           this.errorMessage = `${error.error.message}`;
         }
       );

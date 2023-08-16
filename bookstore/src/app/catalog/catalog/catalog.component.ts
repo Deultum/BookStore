@@ -25,28 +25,28 @@ export class CatalogComponent implements OnInit {
 
     this.apiService.getBooks('/books.json').subscribe(
       (booksData: any) => {
-        // Check if the data returned is an object
+       
         if (typeof booksData === 'object') {
-        //  console.log(Object.keys(booksData));
+       
 
-          // Convert the object values to an array and add bookId to each book
+          
           this.books = Object.keys(booksData).map(bookId => ({
             bookId,
             ...booksData[bookId]
           }));
         } else {
-          // If it's already an array, you can assign it directly
+         
           this.books = booksData;
         }
         this.categories = Array.from(new Set(this.books.map(book => book.category)));
 
-        this.filteredBooks = this.books; // Initially, show all books
+        this.filteredBooks = this.books; 
         this.loading = false;
        // console.log({ books: this.books });
       },
       (error) => {
         console.error('Error fetching books:', error);
-        this.loading = false;
+        this.loading = true;
       }
     );
   }
@@ -60,10 +60,10 @@ export class CatalogComponent implements OnInit {
 
   filterByCategory(category: string): void {
     if (category === '') {
-      // If 'All Categories' is selected, show all books
+      
       this.filteredBooks = this.books;
     } else {
-      // Otherwise, filter books by the selected category
+      
       this.filteredBooks = this.books.filter(book => book.category === category);
     }
   }

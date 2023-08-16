@@ -9,6 +9,7 @@ import { Book } from '../../types/book';
   styleUrls: ['./read-book.component.css'],
 })
 export class ReadBookComponent implements OnInit {
+  loading = true;
   bookId: string | null = null;
   book: Book | null = null;
   content: string | null = null;
@@ -21,18 +22,21 @@ export class ReadBookComponent implements OnInit {
       this.bookId = params['id'];
       
 
-      if (this.bookId) { // Ensure that bookId is not null before calling the API
+      if (this.bookId) { 
         this.apiService.getBookById(this.bookId).subscribe((book) => {
           if (book) {
             this.book = book;
+            this.loading = false;
           //console.log(book);
           
             
           } else {
+            this.loading = true;
             this.router.navigate(['/404']); 
           }
         });
       } else {
+        this.loading = true;
         this.router.navigate(['/books']); 
       }
     });

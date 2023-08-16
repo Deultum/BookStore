@@ -1,8 +1,10 @@
+
 <div class="catalog-container">
-  <h1>Book Catalog</h1>
   <div *ngIf="loading">
-    <p>Loading...</p>
+    <app-loader/>
   </div>
+  <h1>Book Catalog</h1>
+
 </div>
 
 <!-- Add buttons for each book category (visible only to logged-in users) -->

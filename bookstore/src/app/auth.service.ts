@@ -10,7 +10,7 @@ export class AuthService {
   public user?: User;
   public userId: string | undefined;
   constructor() {
-    // Retrieve the isLoggedIn state from local storage on service initialization
+    
     const isLoggedIn = localStorage.getItem('isLoggedIn');
 
     if (isLoggedIn !== null) {
@@ -28,7 +28,7 @@ export class AuthService {
 
   login() {
     this.loggedIn.next(true);
-    // Save the isLoggedIn state to local storage
+    
     localStorage.setItem('isLoggedIn', JSON.stringify(true));
 
 

@@ -23,26 +23,25 @@ export class UserService {
   subscription: Subscription
 
   login(username: string, password: string) {
-    // Placeholder implementation for login
-    // You would typically send an API request to the server for authentication
+   
     return true;
   }
 
   register(username: string, email: string, password: string) {
-    // Placeholder implementation for user registration
+  
     
     return true;
   }
 
-  getUserProfile() {
-    // Placeholder implementation to get user profile
+  // getUserProfile() {
+    
    
-    return {
-      username: 'JohnDoe',
-      email: 'john@example.com',
-      // Add more user-related information as needed
-    };
-  }
+  //   return {
+  //     username: 'JohnDoe',
+  //     email: 'john@example.com',
+  //     // Add more user-related information as needed
+  //   };
+  // }
 
   getProfile() {
     return this.http

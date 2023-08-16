@@ -11,7 +11,7 @@ export class AppComponent implements OnInit{
   isLoggedIn = false;
 
   ngOnInit(): void {
-    // Check if the authentication token exists in LocalStorage
+   
     const authToken = localStorage.getItem('authToken');
     this.isLoggedIn = !!authToken;
   }
