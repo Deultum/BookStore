@@ -20,7 +20,7 @@ The project follows a standard Angular application structure with the following 
    - **interceptors**: Contains Angular HTTP interceptors for adding authentication headers to API requests.
    - **utils**: Contains utility/helper functions used across the application.
    - **app.module.ts**: Main Angular module where components, services, and other modules are declared.
-   - **app-routing.module.ts**: Contains application routes and route configurations.
+   - **app-routing.module.ts**: Contains application routes and route configurations with route guards.
    - **app.component.ts**: Root component of the application.
    - **app.component.html**: Root component template.
 
