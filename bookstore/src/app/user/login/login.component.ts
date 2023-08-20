@@ -31,17 +31,16 @@ export class LoginComponent {
           
           // Assuming the API returns the user data in the response
           const userData: User = response.userData;
-
-          
-          
-
+                              
           // Set the user data in the AuthService
           this.authService.setUserData(userData);
 
           // Call the login() method to set isLoggedIn to true
           this.authService.login();
 
+
           this.router.navigate(['/']);
+                       
         },
         (error: any) => {
           console.error('Login failed:', error);

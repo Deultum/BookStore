@@ -11,6 +11,7 @@ import { EditBookComponent } from './books/edit-book/edit-book.component';
 import { ReadBookComponent } from './books/read-book/read-book.component';
 import { AuthActivate } from './core/guards/auth.activate';
 
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: HomeComponent },
@@ -21,6 +22,8 @@ const routes: Routes = [
   { path: 'create', component: CreateBookComponent, canActivate: [AuthActivate] },
   { path: 'edit/:id', component: EditBookComponent, canActivate: [AuthActivate] },
   { path: 'read/:id', component: ReadBookComponent,canActivate: [AuthActivate] },
+  
+  
   { path: '**', component: PageNotFoundComponent },
 
 

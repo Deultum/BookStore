@@ -16,6 +16,7 @@ import { BooksModule } from './books/books.module';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { SharedModule } from './shared/shared.module';
     CatalogModule,
     BooksModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

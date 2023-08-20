@@ -1,27 +1,63 @@
-# Bookstore
+**Documentation for Angular Book Catalog Project**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
+**Overview:**
+The Angular Book Catalog project is a web application that allows users to view and catalog books. It provides features such as user authentication, book browsing, and book management. The application is built using Angular, a popular frontend framework, and integrates with a backend API to fetch and manage book data.
 
-## Development server
+**Project Structure:**
+The project follows a standard Angular application structure with the following main directories:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. **src**: Contains the main application code and assets.
+   - **app**: Contains components, services, and other Angular-related files.
+   - **assets**: Contains static assets like images, stylesheets, etc.
+   - **environments**: Contains environment-specific configuration files.
+   - **types**: Contains TypeScript interfaces used throughout the application.
 
-## Code scaffolding
+2. **app**: Contains the main application code.
+   - **components**: Contains various components used in the application.
+   - **services**: Contains Angular services for handling API interactions and authentication.
+   - **models**: Contains TypeScript classes or interfaces for data models.
+   - **guards**: Contains Angular route guards to protect certain routes based on authentication status.
+   - **interceptors**: Contains Angular HTTP interceptors for adding authentication headers to API requests.
+   - **utils**: Contains utility/helper functions used across the application.
+   - **app.module.ts**: Main Angular module where components, services, and other modules are declared.
+   - **app-routing.module.ts**: Contains application routes and route configurations.
+   - **app.component.ts**: Root component of the application.
+   - **app.component.html**: Root component template.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Features:**
 
-## Build
+1. **User Authentication:**
+   - The application provides user authentication using Angular's `AuthGuard`.
+   - New users can sign up and existing users can log in to access protected routes.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. **Book Catalog and Browsing:**
+   - The application allows users to browse and view a catalog of books fetched from the backend API.
+   - Books are displayed in a grid format, and users can click on a book to view its details.
 
-## Running unit tests
+3. **Book Details:**
+   - The application provides a separate page to display detailed information about a selected book.
+   - Users can view the book's title, author, cover image, and other relevant details.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. **Book Management (Protected Routes):**
+   - Authenticated users have access to additional features for book management.
+   - Users can add new books to the catalog by providing book details through a form.
+   - Users can edit existing books and update their details.
+   - Users can delete books from the catalog.
 
-## Running end-to-end tests
+5. **API Integration:**
+   - The application communicates with a backend API to fetch book data and manage books.
+   - API interactions are handled using Angular's `HttpClient` and custom service methods.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+6. **Responsive Design:**
+   - The application is designed to be responsive and work seamlessly on various devices and screen sizes.
 
-## Further help
+**Setup and Usage:**
+1. Clone the repository and navigate to the project root directory.
+2. Install the required dependencies using `npm install`.
+3. Set up the backend API and configure the API URL in the environment file.
+4. Run the development server using `ng serve`.
+   Run the softUni practice Server using `node server.js`
+5. Access the application in the browser at `http://localhost:4200`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Note:**
+This documentation provides an overview of the key features and structure of the Angular Book Catalog project. Additional details, such as API endpoints, authentication methods, and specific implementation details, may be present in the actual project files. For a complete understanding, developers are encouraged to review the source code and comments within the project files.
